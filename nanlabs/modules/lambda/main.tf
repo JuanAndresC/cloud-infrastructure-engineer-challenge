@@ -1,7 +1,7 @@
 data "archive_file" "zip" {
   type        = "zip"
   source_dir  = "${path.module}/src"
-  output_path = "${path.module}/build/lambda.zip" # <-- mejor fuera de src
+  output_path = "${path.module}/build/lambda.zip"
 }
 
 
