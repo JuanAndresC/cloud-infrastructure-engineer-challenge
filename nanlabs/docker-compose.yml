@@ -10,8 +10,6 @@ services:
       - SERVICES=lambda,logs,cloudwatch,apigateway,iam,secretsmanager,s3
       - DEBUG=1
       - AWS_DEFAULT_REGION=us-east-1
-      # Recomendado para redes:
-      # - LAMBDA_DOCKER_NETWORK=localstack-net
     volumes:
       - "./.localstack:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -36,9 +34,9 @@ services:
       - POSTGRES_USER=appuser
       - POSTGRES_PASSWORD=apppass
     ports:
-      - "5432:5432"     # opcional, útil para conectarte desde tu host psql
+      - "5432:5432"   
     volumes:
-      - ./db-init:/docker-entrypoint-initdb.d:ro  # scripts .sql opcionales
+      - ./db-init:/docker-entrypoint-initdb.d:ro
     networks: ["localstack-net"]
 
 networks:
