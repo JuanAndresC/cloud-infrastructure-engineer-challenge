@@ -22,7 +22,6 @@ resource "aws_iam_role_policy_attachment" "logs" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-# En AWS real, si la Lambda está en VPC, adjuntar política de ENI si hace falta
 
 resource "aws_lambda_function" "this" {
   function_name    = var.name
